@@ -10,13 +10,11 @@ public class Controls : MonoBehaviour
     public float jumpSpeed = 3.0f;
     public float prevYVelocity;
     public bool jumping = false;
-    float lockPos = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        transform.rotation = Quaternion.Euler(lockPos, lockPos, lockPos);
     }
 
 
