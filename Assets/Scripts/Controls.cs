@@ -29,14 +29,15 @@ public class Controls : MonoBehaviour
         {
             rb.velocity = new Vector2(movespeed, rb.velocity.y);
         }
-        if (Input.GetKey(KeyCode.Space) && (jumping == false))
+        if (Input.GetKey(KeyCode.S))
         {
-            jumping = true;
-            rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+
         }
 
-        
-
+        if (Input.GetKey(KeyCode.Space) && (jumping == false))
+        {
+            jump();  
+        }
 
         //Prevent double jumps. This checks "on the ground"
         if ((rb.velocity.y == 0) && ((rb.velocity.y - prevYVelocity) == 0))
@@ -45,5 +46,11 @@ public class Controls : MonoBehaviour
         }
 
         prevYVelocity = rb.velocity.y;
+    }
+
+    void jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+        jumping = true;
     }
 }
