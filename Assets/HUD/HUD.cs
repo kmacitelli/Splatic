@@ -29,12 +29,13 @@ public class HUD : MonoBehaviour
         
         
         //this part's working!
-        if (currentTimerFill < 3)
+        if (currentTimerFill < timerCircles.Length -1)
         {
             currentTimerFill++;
         }
         else
         {
+            //call event here
             currentTimerFill = 0;
         }
     }
