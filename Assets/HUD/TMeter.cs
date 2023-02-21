@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HUD : MonoBehaviour
+public class TMeter : MonoBehaviour
 {
-    public int currentTimerFill;
+    public int currentTimerFill = 0;
     public Sprite[] timerCircles;
+    public float fillSpeed = 2.0f;
     GameObject meter;
 
 
@@ -14,13 +15,10 @@ public class HUD : MonoBehaviour
     void Start()
     {
         meter = GameObject.Find("Meter");
+        meter.GetComponent<Image>().sprite = timerCircles[currentTimerFill];
 
 
-        currentTimerFill = 0;
-
-        InvokeRepeating("RefillMeter", 2.0f, 2.0f);
-
-        //hide other circles
+        InvokeRepeating("RefillMeter", 0.0f, fillSpeed);
     }
 
     void RefillMeter()
