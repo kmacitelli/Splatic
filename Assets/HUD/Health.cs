@@ -9,18 +9,20 @@ public class Health : MonoBehaviour
     private int originalWidth;
     private GameObject healthFillBar;
 
+
     // Start is called before the first frame update
     void Start()
     {
+       
         healthFillBar = GameObject.Find("HealthFill");
         currentHealthPoints = originalHealthPoints;
         originalWidth = (int)healthFillBar.GetComponent<RectTransform>().rect.width;
 
-        InvokeRepeating("Damage", 2.0f, 2.0f);
+        //InvokeRepeating("Damage", 2.0f, 2.0f);
 
     }
 
-    void Damage()
+    public void Damage()
     {
         int damPoints = 5;
         currentHealthPoints -= damPoints;
