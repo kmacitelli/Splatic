@@ -18,13 +18,10 @@ public class Health : MonoBehaviour
         currentHealthPoints = originalHealthPoints;
         originalWidth = (int)healthFillBar.GetComponent<RectTransform>().rect.width;
 
-        //InvokeRepeating("Damage", 2.0f, 2.0f);
-
     }
 
-    public void Damage()
+    public void Damage(int damPoints)
     {
-        int damPoints = 5;
         currentHealthPoints -= damPoints;
         UpdateHealthFillBar(currentHealthPoints, originalHealthPoints);
 
@@ -35,8 +32,11 @@ public class Health : MonoBehaviour
     }
 
     void UpdateHealthFillBar(int curHP, int origHP)
-    {   
-        healthFillBar.GetComponent<RectTransform>().sizeDelta = new Vector2((float)curHP / (float)origHP * (float)originalWidth, healthFillBar.GetComponent<RectTransform>().rect.height);
+    {
+        float newHealthWidth = (float)curHP / (float)origHP * (float)originalWidth;
+        float healthHeight = healthFillBar.GetComponent<RectTransform>().rect.height;
+
+        healthFillBar.GetComponent<RectTransform>().sizeDelta = new Vector2(newHealthWidth, healthHeight);
     }
 
     // Update is called once per frame

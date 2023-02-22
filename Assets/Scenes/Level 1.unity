@@ -165,9 +165,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 106331525}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09b9a08c8ff5d9c4eae6b27535c8dde8, type: 3}
+  m_Script: {fileID: 11500000, guid: d1f0646edaa071a468933512421bcc21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hScript: {fileID: 0}
 --- !u!60 &106331528
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1099,6 +1100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9931883f3fed8ad4b8c8e5094c1b34d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ticList:
+  - Jump
+  - SideShuffle
   currentTimerFill: 0
   timerCircles:
   - {fileID: 21300000, guid: 1cc8b0f5c44a8a948aa8fdc0660b1f42, type: 3}
