@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface Tic
 {
-      void Execute();
+
+     void Execute(GameObject player, Controls cScript);
 }

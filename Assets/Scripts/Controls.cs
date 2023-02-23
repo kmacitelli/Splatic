@@ -17,8 +17,6 @@ public class Controls : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-
-
     void Update()
     {
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
@@ -36,7 +34,7 @@ public class Controls : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && (jumping == false))
         {
-            jump();  
+            Jump();  
         }
 
         //Prevent double jumps. This checks "on the ground"
@@ -48,7 +46,7 @@ public class Controls : MonoBehaviour
         prevYVelocity = rb.velocity.y;
     }
 
-    void jump()
+    public void Jump()
     {
         rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
         jumping = true;

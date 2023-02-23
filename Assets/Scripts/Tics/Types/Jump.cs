@@ -5,8 +5,9 @@ using UnityEngine;
 public class Jump : Tic
 {
 
-    public void Execute()
+    public void Execute(GameObject player, Controls cScript)
     {
         Debug.Log("Executing jump tic");
+        cScript.Jump();
     }
 }

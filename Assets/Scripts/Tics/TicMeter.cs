@@ -7,17 +7,24 @@ using System.Reflection;
 
 public class TicMeter : MonoBehaviour
 {
+    //TODO other tic types probably need audio, animations
+    //TODO: stomp (noise), noise, press button, 
     public string[] ticList = { "Jump", "SideShuffle" };
 
     public int currentTimerFill = 0;
     public Sprite[] timerCircles;
     public float fillSpeed = 2.0f;
     GameObject meter;
+    GameObject player;
+    Controls cScript;
 
     // Start is called before the first frame update
     void Start()
     {
         meter = GameObject.Find("Meter");
+        player = GameObject.Find("Player");
+        cScript = player.GetComponent<Controls>();
+
         meter.GetComponent<Image>().sprite = timerCircles[currentTimerFill];
 
         InvokeRepeating("RefillMeter", 0.0f, fillSpeed);
@@ -52,6 +59,6 @@ public class TicMeter : MonoBehaviour
         var type = Type.GetType(randomTicFromList);
         var currentTic = (Tic)Activator.CreateInstance(type);
 
-        currentTic.Execute();
+        currentTic.Execute(player, cScript);
     }
 }
