@@ -14,8 +14,6 @@ public class TicMeter : MonoBehaviour
     public float fillSpeed = 2.0f;
     GameObject meter;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +25,11 @@ public class TicMeter : MonoBehaviour
 
     void RefillMeter()
     {
-        //supress button logic will allow skipping this method for some time
+        //TODO supress button logic here will allow skipping this method for some time
 
         meter.GetComponent<Image>().sprite = timerCircles[currentTimerFill];
-        
-        
-        //this part's working!
+      
+        //Fill tic meter or, if its full, make a tic & reset it
         if (currentTimerFill < timerCircles.Length -1)
         {
             currentTimerFill++;
@@ -48,20 +45,12 @@ public class TicMeter : MonoBehaviour
     // Update is called once per frame
     void MakeATic()
     {
-        Tic currentTic = new Jump();
+        //Create tic object out of random item from ticList
         int randomIndex = UnityEngine.Random.Range(0, ticList.Length);
+        string randomTicFromList = ticList[randomIndex];
 
-        Debug.Log("Index is " + randomIndex);
-        string randomFromList = ticList[randomIndex];
-
-        if (randomFromList.Equals(ticList[0]))
-        {
-            currentTic = new Jump();
-        } else if (randomFromList.Equals(ticList[1])){
-            currentTic = new SideShuffle();
-        }
-        
-        Debug.Log("Current tic is " + currentTic);
+        var type = Type.GetType(randomTicFromList);
+        var currentTic = (Tic)Activator.CreateInstance(type);
 
         currentTic.Execute();
     }
