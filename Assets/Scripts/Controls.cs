@@ -7,7 +7,7 @@ public class Controls : MonoBehaviour
 
     public Rigidbody2D rb;
     public float movespeed = 1.0f;
-    public float jumpSpeed = 3.0f;
+    public float jumpSpeed = 6.0f;
     public float prevYVelocity;
     public bool jumping = false;
 
