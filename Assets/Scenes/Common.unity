@@ -201,7 +201,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -278985801
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &213590138
@@ -291,8 +291,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1729323709
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 49a2fb535ffb37542a7574b72f64e929, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -488,9 +488,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1691529953}
-  - component: {fileID: 1691529955}
   - component: {fileID: 1691529954}
-  m_Layer: 5
+  - component: {fileID: 1691529955}
+  m_Layer: 7
   m_Name: HealthBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 1762035799}
   - component: {fileID: 1762035798}
   - component: {fileID: 1762035800}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Meter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +669,7 @@ GameObject:
   - component: {fileID: 2075910514}
   - component: {fileID: 2075910513}
   - component: {fileID: 2075910512}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HealthFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
